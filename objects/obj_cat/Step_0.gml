@@ -1,4 +1,4 @@
-// You can write your code in this editor
+ // You can write your code in this editor
 
 key_w = (keyboard_check(obj_settings.key_up) || (gamepad_axis_value(0, gp_axislv) < 0));
 key_s = (keyboard_check(obj_settings.key_down) || (gamepad_axis_value(0, gp_axislv) > 0));
@@ -19,6 +19,8 @@ if key_d == 1 {
 	var Vmove = key_s - key_w;
 
 	vsp = Vmove * walk_speed;
+	
+	while_counter = 0;
 
 if (place_meeting(x,y+walk_speed, obj_collision_parent)) {
 

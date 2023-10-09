@@ -22,8 +22,11 @@ if key_d == 1 {
 	
 	while_counter = 0;
 
-if (place_meeting(x,y+walk_speed, obj_collision_parent)) {
-
+if (!place_meeting(x,y+grav, obj_collision_parent)) {
+	y += grav;
+	grav += 1;
+} else {
+		grav = max_grav;
 }
 
 //vertical moving collide
@@ -44,4 +47,7 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
 }
 
 	x = x + hsp;
-	y = y + vsp;
+	if (place_meeting(x+walk_speed,y,obj_collision_parent) && vsp != 0) {
+		grav = 0;
+		y = y + vsp;
+	}

@@ -47,7 +47,7 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
 }
 
 	x = x + hsp;
-	if (place_meeting(x+walk_speed,y,obj_collision_parent) && vsp != 0) {
+	if (place_meeting(x+walk_speed,y,obj_collision_parent) || (place_meeting(x-walk_speed,y,obj_collision_parent)) && vsp != 0) {
 		grav = 0;
 		y = y + vsp;
 	}

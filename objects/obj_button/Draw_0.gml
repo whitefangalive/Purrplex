@@ -1,4 +1,5 @@
 draw_self();
+draw_set_font(Talkco);
 
 if (spr_icon != noone) {
 	draw_sprite(spr_icon, 0, x, y);

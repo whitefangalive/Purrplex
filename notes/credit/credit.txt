@@ -2,3 +2,6 @@ Font Juniory € by Khurasan
 
  
 Talkco € by Khurasan 
+
+
+resoultion: cheese = 1000 x 1000

@@ -38,6 +38,7 @@
     {"name":"obj_button","order":2,"path":"objects/obj_button/obj_button.yy",},
     {"name":"obj_cheese","order":6,"path":"objects/obj_cheese/obj_cheese.yy",},
     {"name":"obj_player_parent","order":5,"path":"objects/obj_player_parent/obj_player_parent.yy",},
+    {"name":"obj_pause_menu","order":4,"path":"objects/obj_pause_menu/obj_pause_menu.yy",},
     {"name":"Talkco","order":1,"path":"fonts/Talkco/Talkco.yy",},
     {"name":"Level2","order":2,"path":"rooms/Level2/Level2.yy",},
   ],

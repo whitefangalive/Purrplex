@@ -5,3 +5,5 @@ Talkco € by Khurasan
 
 
 resoultion: cheese = 1000 x 1000
+
+if rats have one cheese they will flee

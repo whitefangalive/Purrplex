@@ -4,6 +4,8 @@ key_w = (keyboard_check(obj_settings.key_up) || (gamepad_axis_value(0, gp_axislv
 key_s = (keyboard_check(obj_settings.key_down) || (gamepad_axis_value(0, gp_axislv) > 0));
 key_a = keyboard_check(obj_settings.key_left) || (gamepad_axis_value(0, gp_axislh) < 0);
 key_d = keyboard_check(obj_settings.key_right) || (gamepad_axis_value(0, gp_axislh) > 0);
+keyJump = keyboard_check_released(obj_settings.key_jump);
+jumpHold = keyboard_check(obj_settings.key_jump);
 
 if key_a == 1 {
 	image_xscale = -1;
@@ -12,31 +14,30 @@ if key_d == 1 {
 	image_xscale = 1;
 }
 
-	var Hmove = key_d - key_a;
-
-	hsp = Hmove * walk_speed;
-
-	var Vmove = key_s - key_w;
-
-	vsp = Vmove * walk_speed;
-	
+	hsp = (key_d - key_a) * walk_speed;
 	while_counter = 0;
 
-if (!place_meeting(x,y+grav, obj_collision_parent)) {
-	y += grav;
-	grav += 1;
-} else {
-		grav = max_grav;
+vsp += grav;
+if (jumpHold && place_meeting(x, y+1, obj_collision_parent) && jump_speed > max_jump_speed) {
+jump_speed -= 0.25;
+}
+
+if (keyJump && place_meeting(x, y+1, obj_collision_parent)) {
+	vsp = jump_speed;
+	jump_speed = min_jump_speed;
 }
 
 //vertical moving collide
-if (place_meeting(x,y+vsp,obj_collision_parent)) {
-while (!place_meeting(x,y+sign(vsp),obj_collision_parent) && (while_counter < 50)) {
-  y = y + sign(vsp);
-  while_counter = while_counter + 1;
-   }
- vsp = 0;
+if (place_meeting(x + hsp, y + (vsp),obj_collision_parent)) {
+	if (vsp > 0) {
+		while !place_meeting(x + hsp, y + sign(vsp), obj_collision_parent) {
+		  y = y + sign(vsp);
+		  while_counter = while_counter + 1;
+		   }
+		vsp = 0;
+	}
 }
+
 // horizontal moving collide
 if (place_meeting(x+hsp,y,obj_collision_parent)) {
 while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 50)) {
@@ -44,10 +45,10 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
   while_counter = while_counter + 1;
    }
  hsp = 0;
+ if ((key_d - key_a) != 0) {
+ vsp = -2;
+ } 
 }
 
-	x = x + hsp;
-	if (place_meeting(x+walk_speed,y,obj_collision_parent) || (place_meeting(x-walk_speed,y,obj_collision_parent)) && vsp != 0) {
-		grav = 0;
-		y = y + vsp;
-	}
+x = x + hsp;
+y = y + vsp;

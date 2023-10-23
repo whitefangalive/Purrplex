@@ -7,3 +7,5 @@ key_right = ord("D");
 key_accept = vk_space;
 
 key_pause = vk_escape;
+
+key_jump = vk_space;

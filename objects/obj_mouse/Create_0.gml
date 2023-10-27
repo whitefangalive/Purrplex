@@ -1,8 +1,8 @@
-path = path_add();
-alarm[0] = 1;
+
 hasCheese = false;
 escaped = false;
 freightend = false;
+ds_gridpathfinding = noone;
 function find_target() {
 	if (freightend == false || instance_number(obj_cheese) < 2) { 
 		if (instance_exists(obj_cheese) && hasCheese == false && escaped == false) {
@@ -26,5 +26,6 @@ function find_target() {
 find_target();
 
 grav = 0.25;
-defaultVsp = 1.25;
+defaultVsp = 0.75;
 vsp = defaultVsp;
+alarm[0] = 1;

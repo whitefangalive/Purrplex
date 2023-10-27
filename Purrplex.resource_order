@@ -41,6 +41,8 @@
     {"name":"obj_player_parent","order":5,"path":"objects/obj_player_parent/obj_player_parent.yy",},
     {"name":"obj_pause_menu","order":4,"path":"objects/obj_pause_menu/obj_pause_menu.yy",},
     {"name":"Talkco","order":1,"path":"fonts/Talkco/Talkco.yy",},
+    {"name":"gameOver","order":3,"path":"rooms/gameOver/gameOver.yy",},
+    {"name":"gotoSavedLevel","order":2,"path":"scripts/gotoSavedLevel/gotoSavedLevel.yy",},
     {"name":"Level2","order":2,"path":"rooms/Level2/Level2.yy",},
   ],
 }

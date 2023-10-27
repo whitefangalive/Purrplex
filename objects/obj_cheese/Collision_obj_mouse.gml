@@ -3,4 +3,5 @@ instance_destroy();
 with (closestMouse) {
 	hasCheese = true;
 	defaultVsp += 0.25;
+	gameLose();
 }

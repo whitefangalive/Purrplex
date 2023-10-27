@@ -63,7 +63,9 @@
     {"id":{"name":"gameLose","path":"scripts/gameLose/gameLose.yy",},},
     {"id":{"name":"Talkco","path":"fonts/Talkco/Talkco.yy",},},
     {"id":{"name":"Juniory","path":"fonts/Juniory/Juniory.yy",},},
+    {"id":{"name":"gameOver","path":"rooms/gameOver/gameOver.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
+    {"id":{"name":"gotoSavedLevel","path":"scripts/gotoSavedLevel/gotoSavedLevel.yy",},},
     {"id":{"name":"Level2","path":"rooms/Level2/Level2.yy",},},
     {"id":{"name":"Level1","path":"rooms/Level1/Level1.yy",},},
   ],
@@ -71,6 +73,7 @@
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"Level1","path":"rooms/Level1/Level1.yy",},},
     {"roomId":{"name":"Level2","path":"rooms/Level2/Level2.yy",},},
+    {"roomId":{"name":"gameOver","path":"rooms/gameOver/gameOver.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

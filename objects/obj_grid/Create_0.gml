@@ -1,2 +1,2 @@
-cell_width = 16;
-cell_height = 16;
+cell_width = 32;
+cell_height = 32;

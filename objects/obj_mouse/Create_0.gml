@@ -6,6 +6,18 @@ freightend = false;
 
 ds_gridpathfinding = noone;
 path_building = noone;
+
+max_speed = 2;
+game_gravity = 1;
+acceleration = 0.3;
+game_friction = 0.1;
+jump_height = -10;
+speed_v = 0;
+speed_h = 0;
+
+action = 0;
+path_point = 0;
+jump_action = 0;
 function find_target() {
 	if (freightend == false || instance_number(obj_cheese) < 2) { 
 		if (instance_exists(obj_cheese) && hasCheese == false && escaped == false) {
@@ -28,7 +40,4 @@ function find_target() {
 }
 find_target();
 
-grav = 0.25;
-defaultVsp = 0.75;
-vsp = defaultVsp;
 alarm[0] = 1;

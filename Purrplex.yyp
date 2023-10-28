@@ -64,6 +64,7 @@
     {"id":{"name":"buildPath","path":"scripts/buildPath/buildPath.yy",},},
     {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
+    {"id":{"name":"followThePath","path":"scripts/followThePath/followThePath.yy",},},
     {"id":{"name":"obj_cheese","path":"objects/obj_cheese/obj_cheese.yy",},},
     {"id":{"name":"obj_player_parent","path":"objects/obj_player_parent/obj_player_parent.yy",},},
     {"id":{"name":"obj_pause_menu","path":"objects/obj_pause_menu/obj_pause_menu.yy",},},

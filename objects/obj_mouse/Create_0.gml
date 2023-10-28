@@ -2,7 +2,10 @@
 hasCheese = false;
 escaped = false;
 freightend = false;
+
+
 ds_gridpathfinding = noone;
+path_building = noone;
 function find_target() {
 	if (freightend == false || instance_number(obj_cheese) < 2) { 
 		if (instance_exists(obj_cheese) && hasCheese == false && escaped == false) {

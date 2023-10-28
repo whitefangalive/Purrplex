@@ -1,2 +1,2 @@
-cell_width = 32;
-cell_height = 32;
+cell_width = sprite_width;
+cell_height = sprite_height;

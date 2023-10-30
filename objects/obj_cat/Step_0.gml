@@ -60,6 +60,7 @@ if (place_meeting(x + hsp, y + (vsp),obj_collision_parent)) {
 	}
 } else {
 	partDone = false;
+	
 }
 
 // horizontal moving collide

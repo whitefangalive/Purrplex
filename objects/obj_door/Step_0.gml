@@ -3,19 +3,16 @@ if (instance_number(obj_mouse) <= 0) {
 }
 
 if (open == true) {
+	frame += curveSped;
 	image_index = 1;
 	if (distance_to_object(obj_player_parent) < 2) {
 		room_goto_next();
 	}
 }
 
-frame++
 
-if (frame >= framesmax[part]) { // this part of the animation has finished move onto the next one
-    part++
-    frame = 0
-    
-    if (part >= array_length(framesmax)) { // the whole animation has finished so reset the whole thing
-        part = 1
-    }
-}
+
+
+var _curveStruct = animcurve_get(curveAsset);
+var _channel = animcurve_get_channel(_curveStruct, "x");
+value = animcurve_channel_evaluate(_channel, frame);

@@ -45,6 +45,7 @@
     {"id":{"name":"ParticleSystem1","path":"particles/ParticleSystem1/ParticleSystem1.yy",},},
     {"id":{"name":"Script11","path":"scripts/Script11/Script11.yy",},},
     {"id":{"name":"spr_unable_to_mouse","path":"sprites/spr_unable_to_mouse/spr_unable_to_mouse.yy",},},
+    {"id":{"name":"a_easeInOutElastic","path":"animcurves/a_easeInOutElastic/a_easeInOutElastic.yy",},},
     {"id":{"name":"spr_grid","path":"sprites/spr_grid/spr_grid.yy",},},
     {"id":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},},
     {"id":{"name":"spr_cheese","path":"sprites/spr_cheese/spr_cheese.yy",},},

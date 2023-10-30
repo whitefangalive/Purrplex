@@ -8,3 +8,14 @@ if (open == true) {
 		room_goto_next();
 	}
 }
+
+frame++
+
+if (frame >= framesmax[part]) { // this part of the animation has finished move onto the next one
+    part++
+    frame = 0
+    
+    if (part >= array_length(framesmax)) { // the whole animation has finished so reset the whole thing
+        part = 1
+    }
+}

@@ -38,7 +38,7 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 			ay = ds_list_find_value(point_list, j+1);
 		if (ax == xgoal && ay == ygoal) {
 			path_found = 1;
-			buildPath(xgoal, ygoal);
+			scr_build_the_path(xgoal, ygoal);
 			break;
 		}
 			n = 1;

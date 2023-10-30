@@ -12,3 +12,4 @@ while_counter = 0;
 //grav = max_grav;
 
 grav = 0.25;
+partDone = true;

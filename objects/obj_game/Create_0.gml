@@ -65,3 +65,5 @@ if (inputvalue < 1)
 
 return _a * power(2, -10 * (--inputvalue)) * sin((inputvalue * inputmax - _s) * (2 * pi) / _p) * 0.5 + outputmax + outputmin;
 }
+
+global.p_system = part_system_create_layer("effects", true);

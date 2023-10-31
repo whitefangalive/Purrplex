@@ -44,6 +44,17 @@ if action == 0
                                 action = 1;
                                 }
                                     else {
+										/// Check if the next point is a jump Two block vertically
+                                            if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1)+obj_grid.cell_height*2 && path_get_point_x(path, path_point) + obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
+                                            {
+                                            speed_h = max_speed * path_direction / 2;
+                                                if place_meeting(x, y+2, obj_collision_parent) && jump_action == 0
+                                                {
+                                                speed_v = 1.5 * (jump_height * 0.9) ;
+                                                jump_action = 1 ;
+                                                speed_h = max_speed * path_direction ;
+                                                }
+                                }
                                             /// Check if the next point is a jump one block vertically
                                             if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1)+obj_grid.cell_height && path_get_point_x(path, path_point) + obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
                                             {

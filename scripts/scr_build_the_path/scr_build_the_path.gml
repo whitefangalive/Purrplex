@@ -16,6 +16,12 @@ for (var i = value-1; i > 0 ; i -= 1)
 {
     x_previous=xgoal ;  // We put in x previous the variable xgoal.
     n=0;
+	if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2, i)  /// Check if left / right, jump 1 block vertically left right
+           {
+           xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2,i);  // Store the X coordinate in xgoal
+           ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal, x_previous+1,ygoal+2,i); // Store the Y coordinate in ygoal
+           path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100); // Add point in path
+           }
         if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1, i)  /// Check if left / right, jump 1 block vertically left right
            {
            xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1,i);  // Store the X coordinate in xgoal

@@ -31,7 +31,6 @@
     {"name":"obj_door","order":3,"path":"objects/obj_door/obj_door.yy",},
     {"name":"spr_cheese","order":3,"path":"sprites/spr_cheese/spr_cheese.yy",},
     {"name":"spr_menu","order":5,"path":"sprites/spr_menu/spr_menu.yy",},
-    {"name":"scr_fillGrid","order":6,"path":"scripts/scr_fillGrid/scr_fillGrid.yy",},
     {"name":"spr_door","order":4,"path":"sprites/spr_door/spr_door.yy",},
     {"name":"obj_credits","order":5,"path":"objects/obj_credits/obj_credits.yy",},
     {"name":"spr_button","order":6,"path":"sprites/spr_button/spr_button.yy",},

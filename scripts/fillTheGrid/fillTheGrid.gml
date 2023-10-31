@@ -42,15 +42,20 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 			break;
 		}
 			n = 1;
-		show_debug_message(ay);
 			if (ay != undefined) {
-				//right
+				/// Check if the enemy can go to the right
 				if (ds_grid_get(ds_gridpathfinding, ax+1, ay) == -1 && ds_grid_get(ds_gridpathfinding, ax+1, ay+1) == -2) {
 					ds_grid_set(ds_gridpathfinding, ax+1, ay, i);
 					ds_list_add(point_list, ax+1);
 					ds_list_add(point_list, ay);
 				} else { // if the enemy can go to the right, the other movment will be impossible so we put a else to skip all the following code
 					//jump vertically right side
+					if (ds_grid_get(ds_gridpathfinding, ax+1, ay) == -2 && ds_grid_get(ds_gridpathfinding, ax+1, ay-1) ==-2 && ds_grid_get(ds_gridpathfinding, ax+1, ay-2) ==-1) {
+						ds_grid_set(ds_gridpathfinding, ax+1, ay-2, i);
+						ds_list_add(point_list, ax+1);
+						ds_list_add(point_list, ay-2);
+					}
+					/// Check if we can go jump one block vertically (right side)
 					if (ds_grid_get(ds_gridpathfinding, ax+1, ay) == -2 && ds_grid_get(ds_gridpathfinding, ax+1, ay-1) ==-1) {
 						ds_grid_set(ds_gridpathfinding, ax+1, ay-1, i);
 						ds_list_add(point_list, ax+1);
@@ -89,11 +94,14 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 		
 			n = 1;
 			if (ay != undefined) {
+				/// Check if the enemy can go to the left
 				if (ds_grid_get(ds_gridpathfinding, ax-1, ay) == -1 && ds_grid_get(ds_gridpathfinding, ax-1, ay+1) == -2) {
 					ds_grid_set(ds_gridpathfinding, ax-1, ay, i);
 					ds_list_add(point_list, ax-1);
 					ds_list_add(point_list, ay);
 				} else {
+					
+					/// Check if we can go jump one block vertically (left side)
 						if (ds_grid_get(ds_gridpathfinding, ax-1, ay) == -2 && ds_grid_get(ds_gridpathfinding, ax-1, ay-1) == -1) {
 						ds_grid_set(ds_gridpathfinding, ax-1, ay-1, i);
 						ds_list_add(point_list, ax-1);

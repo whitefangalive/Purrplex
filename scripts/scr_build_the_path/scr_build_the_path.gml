@@ -8,8 +8,18 @@ var x_previous ; /// Coordinate of X previous
 var a = -1 ;  /// Use when enemy falls. We will store data from grid_pathfinding
 var b = -1 ;  /// Use when enemy falls. We will store data from grid_pathfinding
 var n = 0 ;  /// Use when enemy falls.
+function addPoint(xgoal, ygoal) {
+	var path_length = path_get_number(path_building) - 1;
+	var pathPointY = path_get_point_x(path_building, path_length);
+	var xgoaltimesGrid = xgoal*obj_grid.cell_width + (obj_grid.cell_width/2);
+	if (pathPointY != xgoaltimesGrid && path_get_point_y(path_building, path_get_number(path_building)) != ygoal*obj_grid.cell_height +(obj_grid.cell_height/20)) {
+		path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100);
+		show_debug_message(string(xgoal*obj_grid.cell_width + (obj_grid.cell_width/2)) + ", " + string())
+	}
+}
 
-path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100); /// Initialize the first point of the path
+addPoint(xgoal, ygoal); /// Initialize the first point of the path
+
 value = ds_grid_get(ds_gridpathfinding,xgoal,ygoal) ; /// Value in grid pathfinding of the goal position
 
 for (var i = value-1; i > 0 ; i -= 1)
@@ -19,14 +29,16 @@ for (var i = value-1; i > 0 ; i -= 1)
 	if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2, i) {  /// Check if left / right, jump 2 block vertically left right 
 		xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2,i);  // Store the X coordinate in xgoal
 		ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal, x_previous+1,ygoal+2,i); // Store the Y coordinate in ygoal
-		path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100); // Add point in path
+		addPoint(xgoal, ygoal); // Add point in path
+		
 	}
 
         if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1, i)  /// Check if left / right, jump 1 block vertically left right
            {
            xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1,i);  // Store the X coordinate in xgoal
            ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal, x_previous+1,ygoal+1,i); // Store the Y coordinate in ygoal
-           path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100); // Add point in path
+           addPoint(xgoal, ygoal); // Add point in path
+		   
            }
                 else   
                 {
@@ -36,7 +48,8 @@ for (var i = value-1; i > 0 ; i -= 1)
                         if ds_grid_get (ds_gridpathfinding, x_previous + sign(xgoal-x_previous), ygoal) == -1 /// Check if enemy could really jump
                         {
                         ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-2,ygoal, x_previous+2,ygoal+1,i);
-                        path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100);
+                        addPoint(xgoal, ygoal);
+						
                         }
                             else {      /// Case where he find a O_Collsiion, means that we cannot reach it. Means that we have to fall.
                                     {
@@ -52,7 +65,8 @@ for (var i = value-1; i > 0 ; i -= 1)
                                             {
                                                xgoal = ds_grid_value_x(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);
                                                ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);
-                                               path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100);
+                                               addPoint(xgoal, ygoal);
+											   
                                             }
                                 }
                     }
@@ -70,7 +84,8 @@ for (var i = value-1; i > 0 ; i -= 1)
                                                 {
                                                    xgoal = ds_grid_value_x(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);
                                                    ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal-n, x_previous+1,ygoal,i);
-                                                   path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100);
+                                                   addPoint(xgoal, ygoal);
+												   
                                                 }
 
                                         }

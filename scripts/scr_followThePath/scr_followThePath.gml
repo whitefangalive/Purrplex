@@ -5,12 +5,15 @@ var number_of_points = path_get_number(path);
 var path_direction ;
 
 
+
 path_direction = sign(path_get_point_x(path, path_point+1)-path_get_point_x(path, path_point)) ;
 
 if action == 0
 {
     /// Check if the next point is to move left or right
-    if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1) && path_get_point_x(path, path_point) + obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
+	var pathPointY = path_get_point_y(path, path_point);
+	var pathPointY1 = path_get_point_y(path, path_point+1);
+    if pathPointY == pathPointY1 && path_get_point_x(path, path_point) + obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
     {
     speed_h = max_speed * path_direction ;
     action = 1;

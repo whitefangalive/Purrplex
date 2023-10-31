@@ -20,7 +20,7 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 	for (var i = 1; i <200; ++i) {
 		if (path_found == 1) {
 			ds_list_destroy(point_list);
-			ds_grid_destroy(ds_gridpathfinding);
+			//ds_grid_destroy(ds_gridpathfinding);
 			return path_found;
 			break;
 		}
@@ -29,7 +29,7 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 		
 		if (size_list == 0) {
 			ds_list_destroy(point_list);
-			ds_grid_destroy(ds_gridpathfinding);
+			//ds_grid_destroy(ds_gridpathfinding);
 			return path_found;
 			break;
 		}
@@ -101,7 +101,12 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 					ds_list_add(point_list, ax-1);
 					ds_list_add(point_list, ay);
 				} else {
-					
+					/// Check if we can go jump Two block vertically (right side)
+					if (ds_grid_get(ds_gridpathfinding, ax-1, ay) == -2 && ds_grid_get(ds_gridpathfinding, ax-1, ay-1) ==-2 && ds_grid_get(ds_gridpathfinding, ax-1, ay-2) ==-1) {
+						ds_grid_set(ds_gridpathfinding, ax-1, ay-2, i);
+						ds_list_add(point_list, ax-1);
+						ds_list_add(point_list, ay-2);
+					}
 					/// Check if we can go jump one block vertically (left side)
 						if (ds_grid_get(ds_gridpathfinding, ax-1, ay) == -2 && ds_grid_get(ds_gridpathfinding, ax-1, ay-1) == -1) {
 						ds_grid_set(ds_gridpathfinding, ax-1, ay-1, i);

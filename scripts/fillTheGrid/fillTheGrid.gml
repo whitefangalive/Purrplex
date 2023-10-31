@@ -50,6 +50,7 @@ function fillTheGrid(ax, ay, xgoal, ygoal) {
 					ds_list_add(point_list, ay);
 				} else { // if the enemy can go to the right, the other movment will be impossible so we put a else to skip all the following code
 					//jump vertically right side
+					/// Check if we can go jump Two block vertically (right side)
 					if (ds_grid_get(ds_gridpathfinding, ax+1, ay) == -2 && ds_grid_get(ds_gridpathfinding, ax+1, ay-1) ==-2 && ds_grid_get(ds_gridpathfinding, ax+1, ay-2) ==-1) {
 						ds_grid_set(ds_gridpathfinding, ax+1, ay-2, i);
 						ds_list_add(point_list, ax+1);

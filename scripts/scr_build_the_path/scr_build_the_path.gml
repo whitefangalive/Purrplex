@@ -14,7 +14,7 @@ function addPoint(xgoal, ygoal) {
 	var xgoaltimesGrid = xgoal*obj_grid.cell_width + (obj_grid.cell_width/2);
 	if (pathPointY != xgoaltimesGrid && path_get_point_y(path_building, path_get_number(path_building)) != ygoal*obj_grid.cell_height +(obj_grid.cell_height/20)) {
 		path_add_point(path_building, xgoal*obj_grid.cell_width + (obj_grid.cell_width/2), ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100);
-		show_debug_message(string(xgoal*obj_grid.cell_width + (obj_grid.cell_width/2)) + ", " + string())
+		show_debug_message(string(xgoal*obj_grid.cell_width + (obj_grid.cell_width/2)) + ", " + string(ygoal*obj_grid.cell_height +(obj_grid.cell_height/2), 100))
 	}
 }
 
@@ -26,28 +26,28 @@ for (var i = value-1; i > 0 ; i -= 1)
 {
     x_previous=xgoal ;  // We put in x previous the variable xgoal.
     n=0;
-	if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2, i) {  /// Check if left / right, jump 2 block vertically left right 
-		xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2,i);  // Store the X coordinate in xgoal
-		ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal, x_previous+1,ygoal+2,i); // Store the Y coordinate in ygoal
-		addPoint(xgoal, ygoal); // Add point in path
-		
-	}
-
-        if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1, i)  /// Check if left / right, jump 1 block vertically left right
+	
+		show_debug_message(string(xgoal-1) + " " + string(ygoal) + " " + string(xgoal+1) + " " + string(ygoal+1) + " " + ", " + string(i) + " = " + string((ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1, i))))
+        if (ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1, i))  /// Check if left / right, jump 1 block vertically left right
            {
            xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+1,i);  // Store the X coordinate in xgoal
            ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal, x_previous+1,ygoal+1,i); // Store the Y coordinate in ygoal
            addPoint(xgoal, ygoal); // Add point in path
 		   
-           }
+           } else if ds_grid_value_exists(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2, i) {  /// Check if left / right, jump 2 block vertically left right 
+		xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-1,ygoal, xgoal+1,ygoal+2,i);  // Store the X coordinate in xgoal
+		ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-1,ygoal, x_previous+1,ygoal+2,i); // Store the Y coordinate in ygoal
+		addPoint(xgoal, ygoal); // Add point in path
+		
+	}
                 else   
                 {
-                    if ds_grid_value_exists(ds_gridpathfinding, xgoal-2,ygoal, xgoal+2,ygoal+1, i) /// Check if diagonal jump (big jump) or Horizontal jump (jump over a void)
+                    if ds_grid_value_exists(ds_gridpathfinding, xgoal-3,ygoal, xgoal+3,ygoal+1, i) /// Check if diagonal jump (big jump) or Horizontal jump (jump over a void)
                     {
-                    xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-2,ygoal, xgoal+2,ygoal+1,i);
+                    xgoal = ds_grid_value_x(ds_gridpathfinding, xgoal-3,ygoal, xgoal+3,ygoal+1,i);
                         if ds_grid_get (ds_gridpathfinding, x_previous + sign(xgoal-x_previous), ygoal) == -1 /// Check if enemy could really jump
                         {
-                        ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-2,ygoal, x_previous+2,ygoal+1,i);
+                        ygoal = ds_grid_value_y(ds_gridpathfinding, x_previous-3,ygoal, x_previous+3,ygoal+1,i);
                         addPoint(xgoal, ygoal);
 						
                         }
@@ -94,6 +94,7 @@ for (var i = value-1; i > 0 ; i -= 1)
 
 
 path_add_point(path_building, floor(x/obj_grid.cell_width)*obj_grid.cell_width+(obj_grid.cell_width/2),floor(y/obj_grid.cell_height)*obj_grid.cell_height+(obj_grid.cell_height/2), 100);  /// We add the last point which is the point where there is the enemy.
+show_debug_message(string(floor(x/obj_grid.cell_width)*obj_grid.cell_width+(obj_grid.cell_width/2)) + ", " + string(floor(y/obj_grid.cell_height)*obj_grid.cell_height+(obj_grid.cell_height/2)));
 path_set_closed (path_building,0); /// We didn't close the path because it is an open path. We don't to have loop in this path.
 path_reverse (path_building);  // We reverse the path because we start from the end.
 }

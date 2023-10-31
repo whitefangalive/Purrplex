@@ -56,6 +56,7 @@
     {"id":{"name":"unpause","path":"scripts/unpause/unpause.yy",},},
     {"id":{"name":"obj_unable_to_mouse","path":"objects/obj_unable_to_mouse/obj_unable_to_mouse.yy",},},
     {"id":{"name":"spr_cat","path":"sprites/spr_cat/spr_cat.yy",},},
+    {"id":{"name":"scr_fillGrid","path":"scripts/scr_fillGrid/scr_fillGrid.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"credit","path":"notes/credit/credit.yy",},},
     {"id":{"name":"obj_setup_pathway","path":"objects/obj_setup_pathway/obj_setup_pathway.yy",},},

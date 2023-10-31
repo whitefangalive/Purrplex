@@ -12,7 +12,7 @@ find_target();
      action = 0 ;
      jump_action = 0 ;
 
-	fillTheGrid(floor(x/obj_grid.cell_width), floor(y/obj_grid.cell_height), floor(target_x/obj_grid.cell_width), floor(target_y/obj_grid.cell_height));
+	scr_fillGrid(floor(x/obj_grid.cell_width), floor(y/obj_grid.cell_height), floor(target_x/obj_grid.cell_width), floor(target_y/obj_grid.cell_height));
 
 ////mp_grid_path(obj_setup_pathway.grid, path, x, y, target_x, target_y, false);
 

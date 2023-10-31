@@ -13,7 +13,10 @@ if action == 0
     /// Check if the next point is to move left or right
 	var pathPointY = path_get_point_y(path, path_point);
 	var pathPointY1 = path_get_point_y(path, path_point+1);
-    if pathPointY == pathPointY1 && path_get_point_x(path, path_point) + obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
+	
+	var pathPointX = path_get_point_x(path, path_point);
+	var pathPointX1 = path_get_point_x(path, path_point+1);
+    if (pathPointY == pathPointY1 && pathPointX + obj_grid.cell_width*path_direction == pathPointX1)
     {
     speed_h = max_speed * path_direction ;
     action = 1;
@@ -23,7 +26,13 @@ if action == 0
             if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1) && path_get_point_x(path, path_point) + 2*obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
             {
             speed_h = max_speed * path_direction ;
-            speed_v = jump_height *0.7 ;
+            speed_v = jump_height *0.9 ;
+            action = 1;
+            } else {
+				if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1) && path_get_point_x(path, path_point) + 3*obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
+            {
+            speed_h = max_speed * path_direction ;
+            speed_v = jump_height *1.8 ;
             action = 1;
             }
                 else {
@@ -70,6 +79,7 @@ if action == 0
                             }
                         }
                     }
+			}
         }
 }
 

@@ -1,4 +1,4 @@
-walk_speed = 3;
+walk_speed = 4;
 
 min_jump_speed = -5;
 jump_speed = min_jump_speed;

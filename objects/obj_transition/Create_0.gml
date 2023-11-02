@@ -1,5 +1,5 @@
 transition = 0;
-minimum = 0.005;
+minimum = 0.0001;
 maximum = 21;
 scale = maximum;
 sSpeed = 0.6;

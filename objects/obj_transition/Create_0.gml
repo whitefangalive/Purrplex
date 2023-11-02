@@ -1,6 +1,6 @@
 transition = 0;
-minimum = 0.02;
-maximum = 23;
+minimum = 0.005;
+maximum = 21;
 scale = maximum;
 sSpeed = 0.6;
 image_xscale = scale;

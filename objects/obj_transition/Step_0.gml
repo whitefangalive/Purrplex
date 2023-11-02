@@ -1,5 +1,5 @@
-image_xscale = EaseInQuad(scale, minimum - 0.01, maximum+ 0.5, maximum+1);
-image_yscale = EaseInQuad(scale, minimum - 0.01, maximum+ 0.5, maximum+1);
+image_xscale = EaseInQuad(scale, minimum - 0.0001, maximum+ 0.5, maximum+1);
+image_yscale = EaseInQuad(scale, minimum - 0.0001, maximum+ 0.5, maximum+1);
 if (transition == 1) {
 	scale += sSpeed;
 } else {

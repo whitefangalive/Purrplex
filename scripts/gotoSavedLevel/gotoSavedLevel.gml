@@ -8,6 +8,11 @@ function gotoSavedLevel(){
 	    var _loadData = json_parse(_string);
 
 	    var _loadEntity = array_pop(_loadData);    
-	        room_goto(_loadEntity.inRoom);
+	        var obj = instance_create_layer(x, y, "menuLayer", obj_transition);
+			obj.targetRoom = Level1;
+	} else {
+		show_debug_message("no save file");
+		var obj = instance_create_layer(x, y, "menuLayer", obj_transition);
+		obj.targetRoom = Level1;
 	}
 }

@@ -6,6 +6,7 @@ if (open == true) {
 	frame += curveSped;
 	image_index = 1;
 	if (distance_to_object(obj_player_parent) < 2) {
+		obj_cat.visible = false;
 		transitionToLevel(room_next(room));
 	}
 	if (once == false) {

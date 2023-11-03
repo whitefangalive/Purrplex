@@ -91,6 +91,7 @@
     {"id":{"name":"Talkco","path":"fonts/Talkco/Talkco.yy",},},
     {"id":{"name":"Juniory","path":"fonts/Juniory/Juniory.yy",},},
     {"id":{"name":"showCredits","path":"scripts/showCredits/showCredits.yy",},},
+    {"id":{"name":"spr_cheese_vfx","path":"sprites/spr_cheese_vfx/spr_cheese_vfx.yy",},},
     {"id":{"name":"gameOver","path":"rooms/gameOver/gameOver.yy",},},
     {"id":{"name":"saveLevel","path":"scripts/saveLevel/saveLevel.yy",},},
     {"id":{"name":"gotoMainMenu","path":"scripts/gotoMainMenu/gotoMainMenu.yy",},},

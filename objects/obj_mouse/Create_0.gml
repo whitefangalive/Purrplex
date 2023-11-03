@@ -26,8 +26,10 @@ function find_target() {
 		if (instance_exists(obj_cheese) && hasCheese == false && escaped == false) {
 			show_debug_message(string(cheeseYouCannotGetTo));
 			currentCheeseTryingToGeTo = findNearestNotInList(x, y, obj_cheese, cheeseYouCannotGetTo);
-			target_y = currentCheeseTryingToGeTo.y;
-			target_x = currentCheeseTryingToGeTo.x;
+			if (instance_exists(currentCheeseTryingToGeTo)) {
+				target_y = currentCheeseTryingToGeTo.y;
+				target_x = currentCheeseTryingToGeTo.x;
+			}
 			//if the cat is near the cheese and the moue is near the cat then go to the other cheese
 			var x1 = obj_cat.x;
 			var y1 = obj_cat.y;
@@ -40,8 +42,10 @@ function find_target() {
 			}
 		} else {
 			currentCheeseTryingToGeTo = findNearestNotInList(x, y, obj_cheese, cheeseYouCannotGetTo);
-			target_y = currentCheeseTryingToGeTo.y;
-			target_x = currentCheeseTryingToGeTo.x;
+			if (instance_exists(currentCheeseTryingToGeTo)) {
+				target_y = currentCheeseTryingToGeTo.y;
+				target_x = currentCheeseTryingToGeTo.x;
+			}
 		}
 	}
 }

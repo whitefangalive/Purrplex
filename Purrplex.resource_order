@@ -65,6 +65,7 @@
     {"name":"obj_pause_menu","order":4,"path":"objects/obj_pause_menu/obj_pause_menu.yy",},
     {"name":"Talkco","order":1,"path":"fonts/Talkco/Talkco.yy",},
     {"name":"showCredits","order":8,"path":"scripts/showCredits/showCredits.yy",},
+    {"name":"spr_cheese_vfx","order":11,"path":"sprites/spr_cheese_vfx/spr_cheese_vfx.yy",},
     {"name":"gameOver","order":3,"path":"rooms/gameOver/gameOver.yy",},
     {"name":"saveLevel","order":3,"path":"scripts/saveLevel/saveLevel.yy",},
     {"name":"gotoMainMenu","order":4,"path":"scripts/gotoMainMenu/gotoMainMenu.yy",},

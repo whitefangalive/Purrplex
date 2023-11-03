@@ -43,12 +43,12 @@ if (place_meeting(x + hsp, y + (vsp),obj_collision_parent)) {
 
 				var _ptype1 = part_type_create();
 				part_type_sprite( _ptype1, spr_wall, 1, 0, 0);
-				part_type_size( _ptype1, 0.5, 0.5, 0, 0.2 );
+				part_type_size( _ptype1, 0.5, 0.5, 0, 0.1 );
 				part_type_scale( _ptype1, .2, .2);
 				part_type_speed( _ptype1, 8, 12, 0, 1);
 				part_type_direction( _ptype1, 80, 100, 0, 2);
 				part_type_gravity( _ptype1, 0.5, 270);
-				part_type_orientation( _ptype1, 0, 0, 0, 0, false);
+				part_type_orientation( _ptype1, 0, 360, 2, 0, false);
 				part_type_life( _ptype1, 30, 50);
 
 				var _pemit1 = part_emitter_create( _ps );

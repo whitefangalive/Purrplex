@@ -13,3 +13,10 @@ if (!place_meeting(x, y+1, obj_collision_parent)) {
 }
 
 collide();
+soundTimer++;
+if (soundTimer > maxSoundTime) {
+	maxSoundTime = irandom_range(100, 190);
+	soundTimer = 0;
+	audio_emitter_position(audio_emitter, x, y, 0);
+	audio_play_sound_on(audio_emitter, asset_get_index("rat" + string(irandom_range(1, 4))), false, 1000);
+}

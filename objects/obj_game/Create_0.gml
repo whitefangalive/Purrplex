@@ -66,3 +66,6 @@ if (inputvalue < 1)
 return _a * power(2, -10 * (--inputvalue)) * sin((inputvalue * inputmax - _s) * (2 * pi) / _p) * 0.5 + outputmax + outputmin;
 }
 
+audio_listener_orientation(-1000,0,0,0,1,0);
+audio_falloff_set_model(audio_falloff_linear_distance);
+

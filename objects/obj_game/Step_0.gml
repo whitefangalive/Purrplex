@@ -1,3 +1,6 @@
+if (instance_exists(obj_cat)) {
+	audio_listener_position(obj_cat.x, obj_cat.y, 0);
+}
 var clickedPause = keyboard_check_pressed(obj_settings.key_pause);
 if clickedPause {
 	paused = !paused;

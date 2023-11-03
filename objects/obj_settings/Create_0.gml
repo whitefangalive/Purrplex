@@ -9,3 +9,4 @@ key_accept = vk_space;
 key_pause = vk_escape;
 
 key_jump = vk_space;
+global.volume_setting = 1.0;

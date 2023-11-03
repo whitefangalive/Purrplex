@@ -1,3 +1,5 @@
+x = window_get_width()/2;
+y = window_get_height()/2;
 transition = 0;
 minimum = 0.0001;
 maximum = 21;
@@ -14,3 +16,5 @@ function EaseInQuad(inputvalue,outputmin,outputmax,inputmax) {
 	inputvalue /= inputmax;
 	return outputmax * inputvalue * inputvalue + outputmin;
 }
+audio_play_sound(sfx_wvoop, 10, false, 1);
+

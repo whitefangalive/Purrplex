@@ -3,6 +3,7 @@
 function unpause(){
 	if (instance_exists(obj_pause_menu)) {
 		instance_destroy(obj_pause_menu.resume);
+		instance_destroy(obj_pause_menu.MMenu);
 		instance_destroy(obj_pause_menu.quit);
 		instance_destroy(obj_pause_menu);
 	}

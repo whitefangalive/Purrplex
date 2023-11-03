@@ -30,7 +30,7 @@ if (keyJump && place_meeting(x, y+1, obj_collision_parent)) {
 
 //vertical moving collide
 if (place_meeting(x + hsp, y + (vsp),obj_collision_parent)) {
-	if (vsp > 0) {
+	if (vsp > 0 || (vsp < 1 && place_meeting(x, y - 100, obj_collision_parent))) {
 		while !place_meeting(x + hsp, y + sign(vsp), obj_collision_parent) {
 		  y = y + sign(vsp);
 		  while_counter = while_counter + 1;

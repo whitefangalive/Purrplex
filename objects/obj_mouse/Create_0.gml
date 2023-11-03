@@ -50,5 +50,5 @@ soundTimer = 0;
 maxSoundTime = 60;
 audio_emitter = audio_emitter_create();
 
-audio_emitter_falloff(audio_emitter, 50, 600, 10);
+audio_emitter_falloff(audio_emitter, 50, 800, 1);
 

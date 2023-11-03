@@ -6,7 +6,7 @@ if (open == true) {
 	frame += curveSped;
 	image_index = 1;
 	if (distance_to_object(obj_player_parent) < 2) {
-		room_goto_next();
+		transitionToLevel(room_next(room));
 	}
 	if (once == false) {
 		audio_emitter_position(audio_emitter, x, y, 0);

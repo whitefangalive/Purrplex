@@ -69,3 +69,7 @@ return _a * power(2, -10 * (--inputvalue)) * sin((inputvalue * inputmax - _s) * 
 audio_listener_orientation(-1000,0,0,0,1,0);
 audio_falloff_set_model(audio_falloff_linear_distance);
 
+application_surface_draw_enable(false); // allows you to draw the application_surface manually
+
+surf = surface_create(1920, 1080); // gets updated every frame so you only need it to be as big as your game resolution (for example 480x270). No need to process stuff outside the view area
+

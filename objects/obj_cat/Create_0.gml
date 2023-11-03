@@ -15,3 +15,5 @@ grav = 0.25;
 partDone = true;
 visible = true;
 
+scale = image_xscale;
+

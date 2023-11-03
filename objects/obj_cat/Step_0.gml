@@ -9,10 +9,10 @@ keyJump = keyboard_check_released(obj_settings.key_jump);
 jumpHold = keyboard_check(obj_settings.key_jump);
 
 if key_a == 1 {
-	image_xscale = -1;
+	image_xscale = -scale;
 }
 if key_d == 1 {
-	image_xscale = 1;
+	image_xscale = scale;
 }
 
 	hsp = (key_d - key_a) * walk_speed;
@@ -70,10 +70,10 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
   x = x + sign(hsp);
   while_counter = while_counter + 1;
    }
- hsp = 0;
- if ((key_d - key_a) != 0) {
+ if (((key_d - key_a) != 0) && place_meeting(x+hsp,y,obj_cat_tree)) {
  vsp = -2;
  } 
+ hsp = 0;
 }
 
 x = x + hsp;

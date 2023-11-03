@@ -23,3 +23,4 @@ with (obj_mouse) {
 if (array_length(miceWhoHaveEscaped) == numberOfMice && (numberOfMice != 0)) {
 	gameLose();
 }
+

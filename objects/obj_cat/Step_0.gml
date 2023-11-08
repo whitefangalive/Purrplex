@@ -89,7 +89,7 @@ if (keyboard_check_pressed(vk_anykey)) {
 		if (rand == 100) {
 			audio_play_sound(cat50, 1, false, global.volume_setting, 0, random_range(0.95, 1.1));
 		} else {
-			audio_play_sound(asset_get_index("cat" + string(irandom_range(1, 3))), 1, false, global.volume_setting, 0, random_range(0.8, 1.5));
+			audio_play_sound(asset_get_index("cat" + string(irandom_range(1, 5))), 1, false, global.volume_setting, 0, random_range(0.95, 1.1));
 		}
 	}
 }

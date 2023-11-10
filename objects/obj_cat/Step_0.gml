@@ -10,9 +10,14 @@ jumpHold = keyboard_check(obj_settings.key_jump);
 
 if key_a == 1 {
 	image_xscale = -scale;
+	sprite_index = spr_cat_walk;
 }
 if key_d == 1 {
 	image_xscale = scale;
+	sprite_index = spr_cat_walk;
+}
+if (key_d == 0 && key_a == 0) {
+	sprite_index = spr_cat;
 }
 
 	hsp = (key_d - key_a) * walk_speed;
@@ -80,6 +85,7 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
 
 x = x + hsp;
 y = y + vsp;
+
 
 if (keyboard_check_pressed(vk_anykey)) {
 	if (!keyboard_check_pressed(obj_settings.key_up) && !keyboard_check_pressed(obj_settings.key_down) && 

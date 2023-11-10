@@ -38,6 +38,7 @@
     "IDEVersion": "2023.4.0.84",
   },
   "resources": [
+    {"id":{"name":"spr_cat_walk","path":"sprites/spr_cat_walk/spr_cat_walk.yy",},},
     {"id":{"name":"sfx_munch","path":"sounds/sfx_munch/sfx_munch.yy",},},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},
     {"id":{"name":"cat4","path":"sounds/cat4/cat4.yy",},},

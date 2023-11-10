@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_cat",
-    "path": "sprites/spr_cat/spr_cat.yy",
+    "name": "spr_cat_walk",
+    "path": "sprites/spr_cat_walk/spr_cat_walk.yy",
   },
   "spriteMaskId": null,
   "visible": true,

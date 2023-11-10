@@ -86,7 +86,7 @@ if action == 0
 /// Check if enemy reached the next 
 var nextX = path_get_point_x(path, path_point+1);
 var nextY = path_get_point_y(path, path_point+1);
-var off = y - 7 - sprite_yoffset - (obj_grid.cell_height/2 - sprite_height);
+var off = y - (7 - (112 - 110.35000228881836)) - sprite_yoffset - (obj_grid.cell_height/2 - sprite_height);
 if x <= nextX && nextX <= x + speed_h*path_direction && nextY == off
     {
     path_point = path_point + 1 ;

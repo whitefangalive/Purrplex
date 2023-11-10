@@ -13,7 +13,7 @@ max_speed = 1;
 game_gravity = 1;
 acceleration = 0.3;
 game_friction = 0.1;
-jump_height = -10;
+jump_height = -15;
 speed_v = 0;
 speed_h = 0;
 

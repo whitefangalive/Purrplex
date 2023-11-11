@@ -1,4 +1,3 @@
-
 if (path_exists(path_building)) {
 	scr_followThePath(path_building);
 } else {

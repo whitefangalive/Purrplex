@@ -1,5 +1,4 @@
- // You can write your code in this editor
-
+/// @description Movement / Meow
 
 key_w = (keyboard_check(obj_settings.key_up) || (gamepad_axis_value(0, gp_axislv) < 0));
 key_s = (keyboard_check(obj_settings.key_down) || (gamepad_axis_value(0, gp_axislv) > 0));
@@ -86,15 +85,17 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
 x = x + hsp;
 y = y + vsp;
 
-
+//Meowing
 if (keyboard_check_pressed(vk_anykey)) {
 	if (!keyboard_check_pressed(obj_settings.key_up) && !keyboard_check_pressed(obj_settings.key_down) && 
 	    !keyboard_check_pressed(obj_settings.key_right) && !keyboard_check_pressed(obj_settings.key_left) && 
 		!keyboard_check_pressed(obj_settings.key_jump) && !keyboard_check_pressed(obj_settings.key_pause)) {
 		var rand = irandom_range(1, 100);
+		//rare funny meow
 		if (rand == 100) {
 			audio_play_sound(cat50, 1, false, global.volume_setting, 0, random_range(0.95, 1.1));
 		} else {
+			//standard meow
 			audio_play_sound(asset_get_index("cat" + string(irandom_range(1, 5))), 1, false, global.volume_setting, 0, random_range(0.95, 1.1));
 		}
 	}

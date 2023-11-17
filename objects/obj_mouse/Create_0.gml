@@ -1,6 +1,6 @@
 cheeseYouCannotGetTo = [];
 
-
+dieOnce = false;
 hasCheese = false;
 escaped = false;
 freightend = false;

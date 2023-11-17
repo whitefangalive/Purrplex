@@ -1,6 +1,6 @@
 walk_speed = 4;
 
-min_jump_speed = -5;
+min_jump_speed = -7;
 jump_speed = min_jump_speed;
 max_jump_speed = -15;
 

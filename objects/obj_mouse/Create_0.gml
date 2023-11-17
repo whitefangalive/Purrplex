@@ -9,7 +9,8 @@ freightend = false;
 ds_gridpathfinding = noone;
 path_building = noone;
 
-max_speed = 1;
+max_speed = 0.5;
+moveWhileJumpSpeed = 1.9;
 game_gravity = 1;
 acceleration = 0.3;
 game_friction = 0.1;

@@ -1,9 +1,9 @@
 /// @description Movement / Meow
 
-key_w = (keyboard_check(obj_settings.key_up) || (gamepad_axis_value(0, gp_axislv) < 0));
-key_s = (keyboard_check(obj_settings.key_down) || (gamepad_axis_value(0, gp_axislv) > 0));
-key_a = keyboard_check(obj_settings.key_left) || (gamepad_axis_value(0, gp_axislh) < 0);
-key_d = keyboard_check(obj_settings.key_right) || (gamepad_axis_value(0, gp_axislh) > 0);
+key_w = (keyboard_check(obj_settings.key_up) || (gamepad_axis_value(0, gp_axislv) < 0) || keyboard_check(vk_up));
+key_s = (keyboard_check(obj_settings.key_down) || (gamepad_axis_value(0, gp_axislv) > 0) || keyboard_check(vk_down));
+key_a = keyboard_check(obj_settings.key_left) || (gamepad_axis_value(0, gp_axislh) < 0)  || keyboard_check(vk_left);
+key_d = keyboard_check(obj_settings.key_right) || (gamepad_axis_value(0, gp_axislh) > 0)  || keyboard_check(vk_right);
 keyJump = keyboard_check_released(obj_settings.key_jump);
 jumpHold = keyboard_check(obj_settings.key_jump);
 
@@ -23,7 +23,7 @@ if (key_d == 0 && key_a == 0) {
 	while_counter = 0;
 
 vsp += grav;
-if (jumpHold && place_meeting(x, y+1, obj_collision_parent) && jump_speed > max_jump_speed) {
+if (jumpHold && place_meeting(x, y+1, obj_collision_parent) && jump_speed > max_jump_speed && !keyboard_check(key_s)) {
 jump_speed -= 0.25;
 }
 
@@ -61,7 +61,10 @@ if (place_meeting(x + hsp, y + (vsp),obj_both_collide)) || (place_meeting(x + hs
 
 			part_system_position(_ps, x, y+10);
 		}
-		vsp = 0;
+		if (!keyboard_check(key_s) || !keyboard_check(obj_settings.key_jump) || !(place_meeting(x + hsp, y + (vsp),obj_player_collision))) {
+			vsp = 0;
+		}
+		
 } else {
 	partDone = false;
 	
@@ -78,6 +81,10 @@ while ((!place_meeting(x+sign(hsp),y,obj_collision_parent)) && (while_counter < 
  } 
  hsp = 0;
 }
+if ((key_w != 0) && ((place_meeting(x+walk_speed+1, y, obj_cat_tree)) 
+ || place_meeting(x-walk_speed-1, y, obj_cat_tree))) {
+	vsp = -2;
+ }
 
 x = x + hsp;
 y = y + vsp;

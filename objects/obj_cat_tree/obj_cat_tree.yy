@@ -10,8 +10,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "obj_collision_parent",
-    "path": "objects/obj_collision_parent/obj_collision_parent.yy",
+    "name": "obj_both_collide",
+    "path": "objects/obj_both_collide/obj_both_collide.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

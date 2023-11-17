@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_wall",
+  "name": "obj_invis_wall",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
@@ -10,8 +10,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "obj_both_collide",
-    "path": "objects/obj_both_collide/obj_both_collide.yy",
+    "name": "obj_player_collision",
+    "path": "objects/obj_player_collision/obj_player_collision.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_wall",
-    "path": "sprites/spr_wall/spr_wall.yy",
+    "name": "spr_unable_to_mouse",
+    "path": "sprites/spr_unable_to_mouse/spr_unable_to_mouse.yy",
   },
   "spriteMaskId": null,
   "visible": true,

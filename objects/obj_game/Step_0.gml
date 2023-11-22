@@ -4,6 +4,7 @@ if (instance_exists(obj_cat)) {
 var clickedPause = keyboard_check_pressed(obj_settings.key_pause);
 if clickedPause {
 	paused = !paused;
+	
 }
 
 if (paused == true && clickedPause) {

@@ -73,3 +73,5 @@ application_surface_draw_enable(false); // allows you to draw the application_su
 
 surf = surface_create(1920, 1080); // gets updated every frame so you only need it to be as big as your game resolution (for example 480x270). No need to process stuff outside the view area
 
+paused = false;
+screenShot = -1;

@@ -25,13 +25,13 @@ if action == 0
             /// Check if the next point is horizontal jump / jump over a void.
             if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1) && path_get_point_x(path, path_point) + 2*obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
             {
-            speed_h = max_speed * path_direction ;
+            speed_h = path_direction * 3;
             speed_v = jump_height *0.9 ;
             action = 1;
             } else {
 				if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1) && path_get_point_x(path, path_point) + 3*obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
             {
-            speed_h = max_speed * path_direction ;
+            speed_h = path_direction * 6;
             speed_v = jump_height *1.8 ;
             action = 1;
             }

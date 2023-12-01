@@ -31,8 +31,8 @@ if action == 0
             } else {
 				if path_get_point_y(path, path_point) == path_get_point_y(path, path_point+1) && path_get_point_x(path, path_point) + 3*obj_grid.cell_width*path_direction == path_get_point_x(path, path_point+1)
             {
-            speed_h = path_direction * 6;
-            speed_v = jump_height *1.8 ;
+            speed_h = path_direction * 4;
+            speed_v = jump_height *1.4 ;
             action = 1;
             }
                 else {

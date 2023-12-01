@@ -1,1 +1,1 @@
-max_speed = 1.15;
+max_speed = 1;

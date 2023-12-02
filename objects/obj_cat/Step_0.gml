@@ -4,8 +4,8 @@ key_w = (keyboard_check(obj_settings.key_up) || (gamepad_axis_value(0, gp_axislv
 key_s = (keyboard_check(obj_settings.key_down) || (gamepad_axis_value(0, gp_axislv) > 0) || keyboard_check(vk_down));
 key_a = keyboard_check(obj_settings.key_left) || (gamepad_axis_value(0, gp_axislh) < 0)  || keyboard_check(vk_left);
 key_d = keyboard_check(obj_settings.key_right) || (gamepad_axis_value(0, gp_axislh) > 0)  || keyboard_check(vk_right);
-keyJump = keyboard_check_released(obj_settings.key_jump);
-jumpHold = keyboard_check(obj_settings.key_jump);
+keyJump = keyboard_check_released(obj_settings.key_jump) || keyboard_check_released(vk_up);
+jumpHold = keyboard_check(obj_settings.key_jump) || keyboard_check(vk_up);
 
 if key_a == 1 {
 	image_xscale = -scale;
@@ -93,7 +93,8 @@ y = y + vsp;
 if (keyboard_check_pressed(vk_anykey)) {
 	if (!keyboard_check_pressed(obj_settings.key_up) && !keyboard_check_pressed(obj_settings.key_down) && 
 	    !keyboard_check_pressed(obj_settings.key_right) && !keyboard_check_pressed(obj_settings.key_left) && 
-		!keyboard_check_pressed(obj_settings.key_jump) && !keyboard_check_pressed(obj_settings.key_pause)) {
+		!keyboard_check_pressed(obj_settings.key_jump) && !keyboard_check_pressed(obj_settings.key_pause) &&
+		!keyboard_check_pressed(vk_up)) {
 		var rand = irandom_range(1, 100);
 		//rare funny meow
 		if (rand == 100) {

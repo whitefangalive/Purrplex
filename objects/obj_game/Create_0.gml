@@ -1,4 +1,4 @@
-function EaseLinear(inputvalue,outputmin,outputmax,inputmax) {
+ function EaseLinear(inputvalue,outputmin,outputmax,inputmax) {
 	return outputmax * inputvalue / inputmax + outputmin;
 }
 
@@ -75,3 +75,5 @@ surf = surface_create(1920, 1080); // gets updated every frame so you only need 
 
 paused = false;
 screenShot = -1;
+
+musicOnce = false;

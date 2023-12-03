@@ -25,3 +25,7 @@ if (array_length(miceWhoHaveEscaped) == numberOfMice && (numberOfMice != 0)) {
 	gameLose();
 }
 
+if (room == Level1 && musicOnce == false) {
+	audio_play_sound(m_quite_purrplexing, 1, true, 0.75);
+	musicOnce = true;
+}
